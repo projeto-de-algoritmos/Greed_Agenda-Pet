@@ -28,25 +28,25 @@ function Dashboard() {
   
   function shiftUp(indice, heap){
     let ind = indice;
-    let cont = (heap.length-1);
-    let indPaiAtual = parseInt((ind -1) / 2); 
-    let PaiAtual = heap[indPaiAtual].end; 
+    let indPaiAtual = parseInt((ind - 1) / 2);
+    let PaiAtual = heap[indPaiAtual].end;
     let atual = heap[ind].end;
-  
-    if (atual < PaiAtual) { 
-      cont--;
+
+    while (ind > 0 && atual < PaiAtual) {
       heap = swap(ind, indPaiAtual, heap);
       ind = indPaiAtual;
-      shiftUp(ind, heap);
+      indPaiAtual = parseInt((ind - 1) / 2);
+      PaiAtual = heap[indPaiAtual].end;
+      atual = heap[ind].end;
     }
   }
   
   function pegaMenor(heap){
-    let menor = 0;
-    let ultimo = heap.length-1;
-  
-    heap = swap(0, ultimo, heap);
-    menor = heap.pop();
+    const menor = heap[0];
+    const ultimo = heap.length - 1;
+    heap[0] = heap[ultimo];
+    heap.pop();
+    heapify(0, heap);
     return menor;
   }
   
@@ -54,21 +54,18 @@ function Dashboard() {
     const indEsq = parseInt(2 * indice + 1); // indice do filho do atual que esta na esquerda
     const indDir = parseInt(2 * indice + 2); // indice do filho do atual que esta na direita
     let numMenor = indice;
-  
-    if ( heap[indEsq] != undefined && heap[indDir] != undefined) {
-      
-      if (heap[indEsq].end < heap[numMenor].end) {
-        numMenor = indEsq;
-      }
-  
-      if (heap[indDir].end < heap[numMenor].end) {
-        numMenor = indDir;
-      }
-  
-      if (numMenor !== indice) {
-        heap = swap(indice, numMenor, heap);
-        heapify(numMenor, heap);
-      }
+
+    if (indEsq < heap.length && heap[indEsq].end < heap[numMenor].end) {
+      numMenor = indEsq;
+    }
+
+    if (indDir < heap.length && heap[indDir].end < heap[numMenor].end) {
+      numMenor = indDir;
+    }
+
+    if (numMenor !== indice) {
+      heap = swap(indice, numMenor, heap);
+      heapify(numMenor, heap);
     }
   }
   
