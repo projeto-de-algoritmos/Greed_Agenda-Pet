@@ -1,8 +1,14 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // import './style/dashboard.css';
 import './style/dashboard.css';
 
 function Dashboard() {
+  const [petName, setPetName] = useState('');
+  // const [startTime, setStartTime] = useState(1);
+  // const [endTime, setEndTime] = useState(2);
+  const [startTime, setStartTime] = useState("08:00");
+  const [endTime, setEndTime] = useState("08:30");
+  const [scheduledAppointments, setScheduledAppointments] = useState([]);
 
   //exemplo para test de intervalos:
   const intervals = [
@@ -105,11 +111,100 @@ function Dashboard() {
   const resultado = intervalScheduling(intervals);
   console.log(resultado);
 
+  function addAppointment() {
+    const startTimeParts = startTime.split(":");
+    const endTimeParts = endTime.split(":");
+
+    const startTimeMinutes = parseInt(startTimeParts[0]) * 60 + parseInt(startTimeParts[1]);
+    const endTimeMinutes = parseInt(endTimeParts[0]) * 60 + parseInt(endTimeParts[1]);
+
+    if (startTimeMinutes >= endTimeMinutes) {
+      alert('Horário de início deve ser menor que o horário de término.');
+      return;
+    }
+
+    for (const appointment of scheduledAppointments) {
+      const appointmentStartTimeParts = appointment.start.split(":");
+      const appointmentEndTimeParts = appointment.end.split(":");
+
+      const appointmentStartTimeMinutes = parseInt(appointmentStartTimeParts[0]) * 60 + parseInt(appointmentStartTimeParts[1]);
+      const appointmentEndTimeMinutes = parseInt(appointmentEndTimeParts[0]) * 60 + parseInt(appointmentEndTimeParts[1]);
+
+      if (
+        (startTimeMinutes >= appointmentStartTimeMinutes && startTimeMinutes < appointmentEndTimeMinutes) ||
+        (endTimeMinutes > appointmentStartTimeMinutes && endTimeMinutes <= appointmentEndTimeMinutes)
+      ) {
+        alert('Conflito de horários com outro agendamento.');
+        return;
+      }
+    }
+
+    const newAppointment = {
+      nome: petName,
+      start: startTime,
+      end: endTime,
+    };
+
+    setScheduledAppointments([...scheduledAppointments, newAppointment]);
+    setPetName('');
+    setStartTime('08:00');
+    setEndTime('08:30');
+  }
+
+  // Gere as opções de tempo de 30 em 30 minutos.
+  const timeOptions = [];
+  for (let hour = 8; hour < 18; hour++) {
+    for (let minute = 0; minute < 60; minute += 30) {
+      const formattedHour = hour.toString().padStart(2, '0');
+      const formattedMinute = minute.toString().padStart(2, '0');
+      const formattedTime = `${formattedHour}:${formattedMinute}`;
+      timeOptions.push(formattedTime);
+    }
+  }
 
   return (
     <div className='pagina'>
       <div>
         <h1>hello world</h1>
+        <div>
+          <input
+            type="text"
+            placeholder="Nome do pet"
+            value={petName}
+            onChange={(e) => setPetName(e.target.value)}
+          />
+          <select
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+          >
+            {timeOptions.map((time, index) => (
+              <option key={index} value={time}>
+                {time}
+              </option>)
+            )}
+          </select>
+          <select
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+          >
+            {timeOptions.map((time, index) => (
+              <option key={index} value={time}>
+                {time}
+              </option>)
+            )}
+          </select>
+          <button onClick={addAppointment}>Adicionar Agendamento</button>
+        </div>
+        <div>
+          <h2>Agendamentos:</h2>
+          <ul>
+            {scheduledAppointments.map((appointment, index) => (
+              <li key={index}>
+                {appointment.nome} - Início: {appointment.start} - Término: {appointment.end}
+              </li>)
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
