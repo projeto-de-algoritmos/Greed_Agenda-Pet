@@ -16,13 +16,16 @@ Para os profissionais que dedicam seus dias cuidando de animais de estimação e
 
 ## Screenshots
 
+A **Imagem 1** ilustra a funcionalidade do Agenda Pet. Existe situações em que uma tarefa não é compatível com as outras, quando essa incompatibilidade ocorre, um aviso é exibido, impedindo o agendamento da tarefa, conforme evidenciado na **Imagem 3**. Na **Imagem 2** apresenta o resultado final, maximizando o número de atividades agendadas em um dia, sem a ocorrência de conflitos de horário.
+
 **Imagem 1** 
+![img1](./petshop/src/style/img2.png)
 
 **Imagem 2**
+![img2](./petshop/src/style/img3.png)
 
 **Imagem 3**
-
-**Imagem 4**
+![img3](./petshop/src/style/img1.png)
 
 ## Instalação 
 **Linguagem**: JavaScript<br>
@@ -43,3 +46,5 @@ Para os profissionais que dedicam seus dias cuidando de animais de estimação e
 O Agenda Pet vai receber o nome das tarefas e seus horários de início e fim inseridas por você. Vale ressaltar que essas tarefas são as planejadas para serem realizadas no dia. Após adicionar elas, clique em 'Concluir' e você receberá o resultado do máximo de tarefas que serão possíveis de serem realizadas durante o dia na sequencia certa, da primeira a ser realizada até a última, sem que uma tenha horário conflitante com a outra. 
 
 ## Outros 
+
+As tarefas são inseridas no seguinte formato, onde você especifica o nome do pet, como exemplificado a seguir: `Tosa no Duke`.

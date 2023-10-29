@@ -154,9 +154,9 @@ function Dashboard() {
         <div className='options'>
 
         <div>
-          <label htmlFor="petName">Nome do Pet:</label>
+          <label htmlFor="petName">Nome da tarefa:</label>
           <input
-            placeholder='nome do pet'
+            placeholder='nome da tarefa e do pet, EX: Banho na lola'
             className='form-field'
             type="text"
             id="petName"

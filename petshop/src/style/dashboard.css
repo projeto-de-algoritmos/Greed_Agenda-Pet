@@ -39,7 +39,7 @@
 }
 .result {
   font-family: 'Chango';
-  color: rgb(43, 196, 97);
+  color: rgb(151, 10, 10);
 }
 .button-visit {
   border: 2px solid #fdfdfd;
@@ -55,27 +55,27 @@
   width: 50%;
   display: block;
   cursor: pointer;
-  background-color: rgba(22, 75, 124, 0.51);
+  background-color: rgb(8, 84, 155);
 }
 label {
   font-weight: bold;
   font-size: 20px;
   margin-left: 15px;
   margin-top: 15px;
-  color: rgb(43, 196, 97);
+  color: rgb(7, 38, 138);
   font-family: 'Chango';
 }
 h1 {
   font-family: 'Chango';
   font-size: 50px;
-  color: rgb(11, 128, 67);
+  color: rgb(30, 57, 148);
   left: 3%;
   position: absolute;
 }
 h2 {
   font-family: 'Chango';
   font-size: 30px;
-  color: rgb(43, 196, 97);
+  color: rgb(110, 0, 0);
   align-items: center;
   text-align: center;
 }
