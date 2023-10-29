@@ -1,6 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Orbitron&family=Raleway&family=Ubuntu+Mono&family=Ubuntu:wght@300&display=swap');
 .pagina {
-    background-image: url('./imgPets.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-  }
+  background-image: url('./imgPets.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.form-field {
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  width: 400px;
+  height: 30px;
+  font-family: 'Ubuntu';
+  color: rgba(0, 0, 0, 0.60);
+  font-size: 20px;
+  flex: 3;
+  margin: 10px;
+}
+
+.options {
+  background-color: rgba(0, 110, 255, 0.493);
+  /* display: grid; */
+  /* justify-content: space-between; */
+  align-items: center;
+  /* margin: 30px; */
+  left: 65%;
+  bottom: 10%;
+  width: 30%;
+  height: 80%;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(72, 110, 143, 0.471);
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.result {
+  font-family: 'Chango';
+  color: rgb(43, 196, 97);
+}
+.button-visit {
+  border: 2px solid #fdfdfd;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: 'Ubuntu';
+  color: #ffffff;
+  left: 50%;
+  margin-top: 10px;
+  margin-bottom: -15px;
+  margin-left: 25%;
+  width: 50%;
+  display: block;
+  cursor: pointer;
+  background-color: rgba(22, 75, 124, 0.51);
+}
+label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
+  color: rgb(43, 196, 97);
+  font-family: 'Chango';
+}
+h1 {
+  font-family: 'Chango';
+  font-size: 50px;
+  color: rgb(11, 128, 67);
+  left: 3%;
+  position: absolute;
+}
+h2 {
+  font-family: 'Chango';
+  font-size: 30px;
+  color: rgb(43, 196, 97);
+  align-items: center;
+  text-align: center;
+}
