@@ -22,13 +22,16 @@ Nesse contexto, o <b>Agenda Pet</b> se destaca como uma ferramenta especialmente
 
 ## Screenshots
 
+A **Imagem 1** ilustra a funcionalidade do Agenda Pet. Existe situações em que uma tarefa não é compatível com as outras, quando essa incompatibilidade ocorre, um aviso é exibido, impedindo o agendamento da tarefa, conforme evidenciado na **Imagem 3**. Na **Imagem 2** apresenta o resultado final, maximizando o número de atividades agendadas em um dia, sem a ocorrência de conflitos de horário.
+
 **Imagem 1** 
+![img1](./petshop/src/style/img2.png)
 
 **Imagem 2**
+![img2](./petshop/src/style/img3.png)
 
 **Imagem 3**
-
-**Imagem 4**
+![img3](./petshop/src/style/img1.png)
 
 ## Instalação 
 **Linguagem**: JavaScript<br>
