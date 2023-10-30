@@ -10,6 +10,8 @@
 
 ### Apresentação
 
+[Link para o vídeo de apresentação.](https://github.com/projeto-de-algoritmos/Greed_Agenda-Pet/tree/master/apresenta%C3%A7%C3%A3o)
+
 ## Sobre
 
 <p align="justify">
